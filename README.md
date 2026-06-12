@@ -108,11 +108,3 @@ python -m pytest
 ```
 
 The tests use synthetic data wherever a formula is involved. Core numerical functions avoid requiring SciPy, while SciPy is used automatically for nonlinear fitting when installed.
-
-## Roadmap
-
-- richer instrument-specific importers
-- uncertainty propagation through complete workflows
-- notebook tutorials for common measurement geometries
-- PDF report styling
-- additional mobility spectrum regularization strategies
