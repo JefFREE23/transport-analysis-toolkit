@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transport-analysis-toolkit"
+version = "0.1.0"
+description = "Reproducible electrical transport analysis for Hall, magnetoresistance, Drude, and mobility spectrum workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Transport Analysis Toolkit contributors"}
+]
+keywords = [
+  "transport",
+  "hall-effect",
+  "magnetoresistance",
+  "condensed-matter",
+  "drude",
+  "mobility-spectrum"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Physics"
+]
+dependencies = [
+  "numpy>=1.23",
+  "pandas>=1.5"
+]
+
+[project.optional-dependencies]
+plotting = ["matplotlib>=3.7"]
+fitting = ["scipy>=1.10"]
+reports = ["jinja2>=3.1", "matplotlib>=3.7"]
+dev = ["pytest>=7", "matplotlib>=3.7", "scipy>=1.10", "jinja2>=3.1"]
+
+[project.scripts]
+transport = "transport_toolkit.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["transport_toolkit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
